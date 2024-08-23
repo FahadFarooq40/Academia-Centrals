@@ -1,5 +1,5 @@
 import 'package:academia_centrals/Routes/screen_rountes.dart';
-import 'package:academia_centrals/Screen/welcome_screen.dart';
+import 'package:academia_centrals/Screen/onboarding.dart';
 import 'package:academia_centrals/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+      home: const OnboardingScreen(),
       getPages: AppRoutes.appRoutes(),
       theme: lightTheme(),
       darkTheme: darkTheme(),

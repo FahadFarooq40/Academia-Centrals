@@ -140,7 +140,7 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
                             onTap: () {
                               Get.toNamed(RouteName.doneScreen);
                             },
-                            label: "Continue",
+                            label: "Continues",
                             width: 136,
                             fontSize: isTablet ? 20 : 12,
                           ),
@@ -148,7 +148,9 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
                       )
                     : CustomButton(
                         textColor: Colors.white,
-                        onTap: () {
+                        onTap: () async {
+                          await controller.savePersonalDetails();
+
                           controller.selectedTab.value == 0
                               ? controller.setTab(1)
                               : controller.setTab(2);
