@@ -46,35 +46,37 @@ class PersonalDetailController extends GetxController {
     );
 
     if (pickedDate != null) {
+      // Update the selected date
       selectedDate.value = pickedDate;
     }
   }
 
   var iconColors = [
-    AppColors.greyColor,
-    AppColors.greyColor,
-    AppColors.greyColor,
+    AppColors.greyColor, // Color for Profile icon
+    AppColors.greyColor, // Color for ID Verification icon
+    AppColors.greyColor, // Color for File icon
   ];
 
   var iconSizes = [
-    30.0,
-    30.0,
-    30.0,
+    30.0, // Size for Profile icon
+    30.0, // Size for ID Verification icon
+    30.0, // Size for File icon
   ];
   @override
   void onInit() {
     super.onInit();
     selectedTab.value = 0;
-    iconColors[selectedTab.value] = AppColors.lightTextColor;
+    iconColors[selectedTab.value] = AppColors.primaryColor;
     iconSizes[selectedTab.value] = 35.0;
   }
 
   void setTab(int tabIndex) {
     selectedTab.value = tabIndex;
 
-    iconColors[selectedTab.value] = AppColors.lightTextColor;
+    iconColors[selectedTab.value] = AppColors.primaryColor;
     iconSizes[selectedTab.value] = 35.0;
 
+    // Reset color and size for other icons
     for (var i = 0; i < iconColors.length; i++) {
       if (i != selectedTab.value) {
         iconColors[i] = AppColors.greyColor;
@@ -82,6 +84,7 @@ class PersonalDetailController extends GetxController {
       }
     }
 
+    // Update UI
     update();
   }
 }

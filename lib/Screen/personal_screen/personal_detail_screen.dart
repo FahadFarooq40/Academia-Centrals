@@ -1,28 +1,28 @@
 import 'package:academia_centrals/AppAssets/app_assets.dart';
 import 'package:academia_centrals/AppColors/app_colors.dart';
+import 'package:academia_centrals/Controller/personal_detail_controller.dart';
 import 'package:academia_centrals/MyTheme/theme_extension.dart';
+import 'package:academia_centrals/Routes/route_name.dart';
 import 'package:academia_centrals/Screen/personal_screen/Screens/id_verification.dart';
 import 'package:academia_centrals/Screen/personal_screen/Screens/personal_detail.dart';
 import 'package:academia_centrals/Screen/personal_screen/Screens/uploadDocuments.dart';
 import 'package:academia_centrals/Widgets/app_text.dart';
 import 'package:academia_centrals/Widgets/custom_button.dart';
-import 'package:academia_centrals/controller/personal_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../Routes/route_name.dart';
-
-class personalDetail extends StatefulWidget {
-  const personalDetail({super.key});
+class PersonalDetailScreen extends StatefulWidget {
+  const PersonalDetailScreen({super.key});
 
   @override
-  State<personalDetail> createState() => _Personal_detail_screenState();
+  State<PersonalDetailScreen> createState() => _PersonalDetailScreenState();
 }
 
-class _Personal_detail_screenState extends State<personalDetail> {
+class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
   final PersonalDetailController controller =
       Get.put(PersonalDetailController());
+
   @override
   Widget build(BuildContext context) {
     final bool isTablet = MediaQuery.of(context).size.width > 600;
@@ -40,9 +40,7 @@ class _Personal_detail_screenState extends State<personalDetail> {
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
-                    onTap: () {
-                      Get.toNamed(RouteName.loginScreen);
-                    },
+                    onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: SvgPicture.asset(
@@ -131,9 +129,6 @@ class _Personal_detail_screenState extends State<personalDetail> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           CustomButton(
-                            onTap: () {
-                              Get.toNamed(RouteName.loginScreen);
-                            },
                             label: "I'll upload later",
                             width: 136,
                             backgroundColor: Colors.transparent,

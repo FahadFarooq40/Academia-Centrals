@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PersonalDetails extends StatefulWidget {
-  const PersonalDetails({Key? key}) : super(key: key);
+  const PersonalDetails({super.key});
 
   @override
   State<PersonalDetails> createState() => _PersonalDetailsState();
@@ -38,7 +38,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedClass.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -77,7 +77,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
           const SizedBox(height: 20),
@@ -96,7 +96,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedDegree.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -135,24 +135,39 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
           const SizedBox(height: 20),
           Obx(
-            () => CustomTextFormField(
-              onTap: () {
-                controller.showCustomDatePicker(context);
-              },
-              readOnly: true,
-              labelText: 'Date of Birth',
-              hintText: controller.selectedDate.value != null
-                  ? '${controller.selectedDate.value!.day}-${controller.selectedDate.value!.month}-${controller.selectedDate.value!.year}'
-                  : 'Select Date of Birth',
-              hintTextColor: AppColors.primaryColor,
-              suffixIcon: Icons.arrow_drop_down,
-              suffixIconColor: AppColors.primaryColor,
-            ),
+            () {
+              bool isClicked = false;
+              return CustomTextFormField(
+                onTap: () {
+                  controller.showCustomDatePicker(context);
+                  isClicked = true;
+                },
+                readOnly: true,
+                labelText: 'Date of Birth',
+                hintText: controller.selectedDate.value != null
+                    ? '${controller.selectedDate.value!.day}-${controller.selectedDate.value!.month}-${controller.selectedDate.value!.year}'
+                    : 'Select Date of Birth',
+                hintTextColor: controller.selectedDate.value != null
+                    ? AppColors
+                        .primaryColor // Change to your primary color when date is selected
+                    : (isClicked
+                        // ignore: dead_code
+                        ? AppColors
+                            .primaryColor // Change to primary color when clicked
+                        : AppColors
+                            .lightTextColor), // Light color when not clicked
+                suffixIcon: Icons.arrow_drop_down,
+                suffixIconColor: isClicked
+                    // ignore: dead_code
+                    ? AppColors.primaryColor
+                    : AppColors.lightTextColor, // Change color on click
+              );
+            },
           ),
           const SizedBox(height: 20),
           Obx(
@@ -170,7 +185,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedGender.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -223,7 +238,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
           const SizedBox(height: 20),
@@ -242,7 +257,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedCategory.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -295,7 +310,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
           const SizedBox(height: 20),
@@ -314,7 +329,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedCountry.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -367,7 +382,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
           const SizedBox(height: 20),
@@ -386,7 +401,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: controller.selectedDistrict.value == 0
-                          ? AppColors.primaryColor
+                          ? AppColors.lightTextColor
                           : context.customTheme.textColor,
                     ),
                   ),
@@ -439,7 +454,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               enabledBorderColor: AppColors.greyColor,
               focusedBorderColor: AppColors.greyColor,
               fillColor: context.customTheme.bgcolor,
-              primaryColor: AppColors.primaryColor,
+              primaryColor: AppColors.lightTextColor,
             ),
           ),
         ],

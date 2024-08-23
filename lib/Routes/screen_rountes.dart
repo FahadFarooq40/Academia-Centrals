@@ -44,7 +44,7 @@ class AppRoutes {
         ),
         GetPage(
           name: RouteName.personalDetail,
-          page: () => const personalDetail(),
+          page: () => const PersonalDetailScreen(),
         ),
         GetPage(
           name: RouteName.doneScreen,
