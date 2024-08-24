@@ -1,6 +1,8 @@
 # Academia-Centrals
 
 Academia-Centrals is your one-stop destination for managing and exploring educational opportunities and scholarships. Whether you’re just starting your academic journey or looking to advance your studies, this platform offers a seamless experience from onboarding to applying for scholarships. Here’s a quick look at the features:
+## Academia-Centrals Picture
+![Blue Modern Mobile Application Presentation](https://github.com/user-attachments/assets/1e85b6fb-52e4-40cb-9b51-6f1e7226c3d7)
 
 ## Key Features
 
